@@ -1,0 +1,23 @@
+.container {
+  background-color: antiquewhite;
+}
+
+.row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.man-image {
+}
+
+.man-container {
+  text-align: left;
+  color: brown;
+}
+
+.man-title {
+}
+
+.man-price {
+}
