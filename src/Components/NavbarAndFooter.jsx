@@ -14,6 +14,7 @@ import { Outlet } from "react-router-dom";
 function NavbarAndFooter() {
 	const cartLength = JSON.parse(localStorage.getItem("cart")).length;
 	console.log(cartLength);
+	console.log(cartLength);
 	return (
 		<>
 			<nav>
