@@ -12,6 +12,8 @@ import emailIcon from "../Assets/icons8-email-100.png";
 import { Outlet } from "react-router-dom";
 
 function NavbarAndFooter() {
+	const cartLength = JSON.parse(localStorage.getItem("cart")).length;
+	console.log(cartLength);
 	return (
 		<>
 			<nav>
@@ -32,6 +34,7 @@ function NavbarAndFooter() {
 					</div>
 
 					<div className="right_nav">
+						{cartLength}
 						<button className="cart-icon">
 							<img src={cartIcon} alt="cart" />
 						</button>

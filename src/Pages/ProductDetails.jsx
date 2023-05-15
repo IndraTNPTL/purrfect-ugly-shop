@@ -13,6 +13,17 @@ function ProductDetails() {
 	}, [productId]);
 
 	// console.log({ productDetails });
+	function handleClick(e) {
+		const stored = localStorage.getItem("cart");
+		if (stored) {
+			const parsed = JSON.parse(stored);
+			parsed.push(productDetails);
+			localStorage.setItem("cart", JSON.stringify(parsed));
+			return;
+		}
+
+		localStorage.setItem("cart", JSON.stringify([productDetails]));
+	}
 
 	return (
 		<>
@@ -43,7 +54,10 @@ function ProductDetails() {
 								{productDetails.description}
 							</p>
 							<div className="add-to-cart">
-								<button className="btn-add-to-cart">
+								<button
+									className="btn-add-to-cart"
+									onClick={handleClick}
+								>
 									Add to cart
 								</button>
 							</div>

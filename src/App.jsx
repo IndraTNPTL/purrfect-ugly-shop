@@ -16,24 +16,27 @@ import ContactUs from "./Pages/ContactUs";
 import NavbarAndFooter from "./Components/NavbarAndFooter";
 
 function App() {
-  return (
-    <>
-      <Routes>
-        <Route element={<NavbarAndFooter />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/women" element={<AllWomen />} />
-          <Route path="/men" element={<AllMen />} />
-          <Route path="/jewelery" element={<AllJewelery />} />
-          <Route path="/electronics" element={<AllElectronics />} />
-          <Route path="/products/:productId" element={<ProductDetails />} />
-          <Route path="/" element={<ContactUs />}></Route>
+	return (
+		<>
+			<Routes>
+				<Route element={<NavbarAndFooter />}>
+					<Route path="/" element={<Home />} />
+					<Route path="/women" element={<AllWomen />} />
+					<Route path="/men" element={<AllMen />} />
+					<Route path="/jewelery" element={<AllJewelery />} />
+					<Route path="/electronics" element={<AllElectronics />} />
+					<Route
+						path="/products/:productId"
+						element={<ProductDetails />}
+					/>
+					<Route path="/contact" element={<ContactUs />}></Route>
 
-          <Route path="/about" element={<About />} />
-          {/* <Route path="/contact" element={<About />}/> */}
-        </Route>
-      </Routes>
-    </>
-  );
+					<Route path="/about" element={<About />} />
+					{/* <Route path="/contact" element={<About />}/> */}
+				</Route>
+			</Routes>
+		</>
+	);
 }
 
 export default App;
