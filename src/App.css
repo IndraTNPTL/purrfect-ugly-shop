@@ -136,6 +136,7 @@ nav {
 	flex: 1;
 	display: flex;
 	justify-content: flex-end;
+	color: #002a32;
 }
 
 .cart-container {
@@ -470,4 +471,164 @@ footer {
 .btn-add-to-cart:hover {
 	background-color: #002a32;
 	transition: 0.5s;
+}
+
+/* CONTACT US PAGE CSS */
+
+.help-form {
+	transition: tranform 0.2s ease-out;
+	height: auto;
+	bottom: 40px;
+	display: inline-block;
+	position: fixed;
+	right: 40px;
+	width: 303px;
+	overflow: hidden;
+	z-index: 200;
+}
+
+.help-form--submitted {
+	max-height: 100px;
+}
+
+.help-form-container {
+	background: #132a42;
+	box-sizing: border-box;
+	padding: 24px 32px;
+	box-shadow: 0 2px 12px 0 rgb(0, 0, 0);
+	border-radius: 8px 8px 0 0;
+	width: 100%;
+	height: 100%;
+	z-index: 201;
+	overflow: hidden;
+	position: relative;
+}
+
+.help-form-title {
+	font-size: 18px;
+	color: floralwhite;
+	margin: 0 0 24px;
+	letter-spacing: 0;
+}
+
+.button--solid.button--blue {
+	background-color: #0c58da;
+}
+
+.help-form__close-button {
+	font-size: 0.8em;
+	position: absolute;
+	right: 32px;
+	top: 24px;
+	width: 24px;
+	height: 24px;
+	line-height: 1;
+}
+
+.button--blue {
+	border-color: #0c58da;
+}
+
+.button {
+	border: 1px solid;
+	border-radius: 4px;
+	color: floralwhite;
+	cursor: pointer;
+	display: block;
+	font-family: inherit;
+	text-align: center;
+	transition: all 0.3s ease-out;
+}
+
+.help-form__close-button .icon {
+	font-size: 6px;
+	font-weight: 600;
+}
+
+[class*=" icon-"],
+[class^="icon-"] {
+	font-family: icomoon !important;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 1;
+	speak: none;
+	text-transform: none;
+}
+
+/* .icon-chevron-up {
+	content: "";
+} */
+
+.help-form-text-area {
+	font-size: 1em;
+	padding: 8px;
+	box-sizing: border-box;
+	background: #fff;
+	border: 1px solid #b5bbc0;
+	border-radius: 4px;
+	height: 72px;
+	outline: 0;
+	resize: none;
+	width: 100%;
+	color: #002a32;
+}
+
+.align {
+	display: table;
+}
+
+.align--even {
+	table-layout: fixed;
+}
+
+.align--fluid {
+	width: 100%;
+}
+
+.align__cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.u-left {
+	float: left;
+}
+
+.help-form-help-button {
+	color: #fff;
+	cursor: pointer;
+	font-size: 0.8em;
+	text-decoration: underline;
+}
+
+.u-right {
+	float: right;
+	margin: 5px 0 24px;
+}
+
+.help-form__send-to-bottom-button {
+	line-height: 1;
+	min-width: 0;
+}
+
+.help-form .highlight-send {
+	font-weight: 700;
+}
+
+.help-form__response {
+	font-size: 0.75em;
+	color: floralwhite;
+	margin-left: 24px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #132a42;
+	padding: 10px;
+	z-index: 1000;
 }
