@@ -2,11 +2,12 @@ import aboutImg from "../Assets/custom-style-script-website-optimization-coding-
 
 function About() {
 	return (
-		<div className="about">
+		<div className="page-container">
 			<div className="about-content">
 				<h1>
-					About This <span className="highlight-color">Purrfect</span>{" "}
-					Ugly Shop
+					About This{" "}
+					<span className="highlight-color italic">Purrfect</span>{" "}
+					<span className="italic">Ugly</span> Shop
 				</h1>
 				<div className="about-description">
 					<img
