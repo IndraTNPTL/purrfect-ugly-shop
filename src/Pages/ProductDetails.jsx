@@ -12,6 +12,10 @@ function ProductDetails() {
 			.then((response) => setproductDetails(response.data));
 	}, [productId]);
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	// console.log({ productDetails });
 	function handleClick(e) {
 		const stored = localStorage.getItem("cart");

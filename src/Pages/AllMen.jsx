@@ -13,6 +13,10 @@ function AllMen() {
 			.catch((e) => console.log(e));
 	}, []);
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	if (!men) {
 		return <p>Loading...</p>;
 	}

@@ -15,6 +15,10 @@ function AllWomen() {
 			.catch((e) => console.log(e));
 	}, []);
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	if (!women) {
 		return <p>Loading...</p>;
 	}

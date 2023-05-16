@@ -13,6 +13,10 @@ function AllJewelery() {
 			.catch((e) => console.log(e));
 	}, []);
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	if (!jeweleries) {
 		return <p>Loading...</p>;
 	}
