@@ -16,25 +16,36 @@ import Cart from "./Pages/Cart";
 import NavbarAndFooterAndContactTooltip from "./Components/NavbarAndFooterAndContactTooltip";
 
 function App() {
-  const [allProducts, setHome] = useState([]);
+  const [allProducts, setAllProduct] = useState([]);
   const [filteredProducts, setfilteredProducts] = useState(allProducts);
 
   function handleAddToCart(product) {
-    setHome([...allProducts, product]);
+    localStorage.setItem("cart", JSON.stringify([...allProducts, product]));
+    setAllProduct([...allProducts, product]);
   }
   function handleDelete(name) {
-    const updatedHome = allProducts.filter((element) => element.name !== name);
+    console.log(name);
+    const updatedAllProduct = allProducts.filter((element) => {
+      console.log(element.title, name);
+      return element.title !== name;
+    });
+    console.log(updatedAllProduct);
 
     const updatedFilteredProducts = filteredProducts.filter(
-      (element) => element.name !== name
+      (element) => element.title !== name
     );
-    setHome(updatedHome);
+    setAllProduct(updatedAllProduct);
+    localStorage.setItem("cart", JSON.stringify(updatedAllProduct));
     setfilteredProducts(updatedFilteredProducts);
   }
   return (
     <>
       <Routes>
-        <Route element={<NavbarAndFooterAndContactTooltip />}>
+        <Route
+          element={
+            <NavbarAndFooterAndContactTooltip handleDelete={handleDelete} />
+          }
+        >
           <Route
             path="/"
             element={<Home handleAddToCart={handleAddToCart} />}
