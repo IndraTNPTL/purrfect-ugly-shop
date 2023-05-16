@@ -15,6 +15,10 @@ function Home() {
 			.catch((e) => console.log(e));
 	}, []);
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	if (!products) {
 		return <p>Loading...</p>;
 	}
