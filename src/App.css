@@ -397,8 +397,9 @@ footer {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	align-items: center;
+	justify-content: center;
 	height: fit-content;
-	width: 80vw;
+	width: 90vw;
 	padding-bottom: 5em;
 	row-gap: 2rem;
 	column-gap: 1em;
@@ -418,9 +419,13 @@ footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	/* border: 1px solid black; */
+	justify-content: space-between;
 	border-radius: 7px;
+}
+
+.card > a {
+	width: 100%;
+	text-decoration: none;
 }
 
 .card-image {
@@ -428,23 +433,26 @@ footer {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	/* overflow: hidden; */
-	margin: 2em 2em 2em;
-	flex: 2;
+	margin: 3em 0;
 }
 
 .card-image > img {
-	height: 11.5em;
+	height: 14em;
 	object-fit: cover;
+	margin: 0 1em;
+}
+
+#jewelery-special-img-class {
+	height: 14em;
 }
 
 .card-content {
 	display: flex;
+	width: 80%;
 	justify-content: center;
 	flex-direction: column;
-	margin: 0 2em 2em;
-	flex: 1;
-	row-gap: 1em;
+	margin: 0 2em;
+	/* row-gap: 1em; */
 }
 
 .product-name {
@@ -520,7 +528,7 @@ footer {
 
 .add-to-cart {
 	width: 100%;
-	margin: 1em 0;
+	margin: 1em 0 0;
 }
 
 .btn-add-to-cart {

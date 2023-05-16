@@ -43,11 +43,8 @@ function Home() {
 					<div className="cards-wrapper">
 						<h2 className="home-subtitle">All Products</h2>
 						{products.map((product) => (
-							<Link
-								key={product.id}
-								to={`/products/${product.id}`}
-							>
-								<div className="card">
+							<div key={product.id} className="card">
+								<Link to={`/products/${product.id}`}>
 									<div className="card-image">
 										<img
 											src={product.image}
@@ -62,8 +59,16 @@ function Home() {
 											{product.price}€
 										</p>
 									</div>
+								</Link>
+								<div className="add-to-cart">
+									<button
+										className="btn-add-to-cart"
+										onClick={() => handleAddToCart(man)}
+									>
+										Add to cart
+									</button>
 								</div>
-							</Link>
+							</div>
 						))}
 					</div>
 				</div>
