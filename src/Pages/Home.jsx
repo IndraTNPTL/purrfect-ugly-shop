@@ -6,6 +6,7 @@ import heroBanner from "../Assets/banner.png";
 
 function Home({ handleAddToCart }) {
 	const [products, setProducts] = useState();
+
 	useEffect(() => {
 		axios
 			.get("https://fakestoreapi.com/products/")

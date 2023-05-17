@@ -8,6 +8,11 @@ function Cart({ cartItems, handleDelete, updateSubtotal, handleEmptyCart }) {
 		window.scrollTo(0, 0);
 	}, []);
 
+	const total = cartItems.reduce(
+		(acc, item) => acc + item.price * item.quantity,
+		0
+	);
+
 	return (
 		<div className="page-container">
 			<div className="list-content">
@@ -78,6 +83,21 @@ function Cart({ cartItems, handleDelete, updateSubtotal, handleEmptyCart }) {
 										</td>
 									</tr>
 								))}
+								<tr>
+									<td></td>
+
+									<td></td>
+									<td></td>
+									<td className="total-title">
+										<strong>Total:</strong>
+									</td>
+									<td>
+										<span className="subtotal-value">
+											{total}€
+										</span>
+									</td>
+									<td></td>
+								</tr>
 							</tbody>
 						</table>
 					) : (
