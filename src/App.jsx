@@ -26,6 +26,8 @@ function App() {
 	function handleAddToCart(product) {
 		const existingProduct = cartItem.find((item) => item.id === product.id);
 
+		alert("Item added to your cart!");
+
 		if (existingProduct) {
 			existingProduct.quantity += 1;
 		} else {
