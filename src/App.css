@@ -473,6 +473,7 @@ footer {
 .price {
 	font-weight: 800 !important;
 	color: #ff8552;
+	font-size: 1.3em;
 }
 
 /* PRODUCT PAGE */
@@ -680,14 +681,14 @@ footer {
 
 .cart-table {
 	width: 100%;
-	padding: 1em 3em;
+	padding: 0.5em 3em;
 	border-spacing: 2.7em 3em;
 }
 
 th {
 	color: #ff8552;
 	text-align: left;
-	font-size: 1.2em;
+	font-size: 1.3em;
 	font-weight: 700;
 }
 
@@ -747,6 +748,10 @@ tr {
 	background-color: #002a32;
 	border: 1px solid #002a32;
 	transition: 0.5s;
+}
+
+.total-title {
+	font-size: 1.5em;
 }
 
 .cart-ctas {
