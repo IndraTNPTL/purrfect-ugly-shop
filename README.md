@@ -13,7 +13,7 @@ This is a web application called "Purrfect Ugly Shop" built with React. It is an
 
 Once the application is running, open a web browser and navigate to the following URL:
 
-http://localhost:3000
+https://the-purrfect-ugly-shop.netlify.app/
 
 You will be redirected to the home page of the Purrfect Ugly Shop. From there, you can navigate to different pages using the navigation bar.
 
