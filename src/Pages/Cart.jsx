@@ -1,50 +1,105 @@
-import React from "react";
+import { useEffect } from "react";
 
-function Cart({ cartItems, handleDelete }) {
-  return (
-    <div className="page-container">
-      <div className="about-content">
-        <h1>Cart</h1>
+// IMPORT Link
+import { Link } from "react-router-dom";
 
-        <table className="cart">
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th> Name</th>
-              <th>Unit Price</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cartItems.map((item) => (
-              <tr key={item.id} className="product">
-                <td className="img">
-                  <span>
-                    <img src={item.image}></img>
-                  </span>
-                </td>
-                <td className="name">
-                  <span>{item.title}</span>
-                </td>
-                <td className="price">
-                  <span>{item.price}€</span>
-                </td>
+function Cart({ cartItems, handleDelete, updateSubtotal, handleEmptyCart }) {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
-                <div className="action">
-                  <button
-                    className="btn-delete"
-                    onClick={() => handleDelete(item.title)}
-                  >
-                    {""}Delete{""}
-                  </button>
-                </div>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
+	return (
+		<div className="page-container">
+			<div className="list-content">
+				<h1>
+					<span className="highlight-color italic">Purrfect</span>
+					<span className="italic"> Ugly </span>
+					Cart
+				</h1>
+
+				<div className="container">
+					{cartItems.length > 0 ? (
+						<table className="cart-table">
+							<thead>
+								<tr>
+									<th></th>
+									<th>Item name</th>
+									<th>Unit Price</th>
+									<th>Quantity</th>
+									<th>Subtotal</th>
+									<th></th>
+								</tr>
+							</thead>
+
+							<tbody>
+								{cartItems.map((item) => (
+									<tr key={item.id} className="product">
+										<td className="cart-img">
+											<img src={item.image}></img>
+										</td>
+										<td className="name">{item.title}</td>
+
+										<td className="unit-price">
+											{item.price}€
+										</td>
+
+										<td className="quantity">
+											<input
+												className="quantity-input"
+												type="number"
+												min="1"
+												value={item.quantity}
+												onChange={(e) => {
+													item.quantity = parseInt(
+														e.target.value
+													);
+													updateSubtotal(item);
+												}}
+											/>
+										</td>
+
+										<td className="subtotal">
+											<span className="subtotal-value">
+												{item.price * item.quantity}€
+											</span>
+										</td>
+
+										<td className="delete">
+											<div className="action">
+												<button
+													className="btn-delete"
+													onClick={() =>
+														handleDelete(item.id)
+													}
+												>
+													Remove
+												</button>
+											</div>
+										</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
+					) : (
+						<h2 className="empty-cart">
+							Your cart is empty, go buy some stuff!
+						</h2>
+					)}
+				</div>
+				<div className="cart-ctas">
+					<Link to="/">
+						<button className="btn-go-shopping">
+							Continue shopping
+						</button>
+					</Link>
+
+					<button className="btn-dont-buy" onClick={handleEmptyCart}>
+						Don't buy
+					</button>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default Cart;

@@ -3,6 +3,9 @@ import linkedinLogo from "../Assets/linkedin-logo-linkedin-icon-transparent-free
 
 import { useEffect } from "react";
 
+// IMPORT Link
+import { Link } from "react-router-dom";
+
 function About() {
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -17,7 +20,7 @@ function About() {
 					<span className="italic"> Ugly </span>Shop
 				</h1>
 
-				<div className="about-container">
+				<div className="container">
 					<div className="about-description">
 						<div className="about-img">
 							<img
@@ -51,29 +54,31 @@ function About() {
 								<div className="social-infos">
 									<div className="social-details">
 										<h4>Indra ➡️</h4>
-										<a
-											href="https://www.linkedin.com/in/indratinotpatole/"
+										<Link
+											to="https://www.linkedin.com/in/indratinotpatole/"
 											target="_blank"
+											rel="noopener noreferrer"
 										>
 											<img
 												className="logo linkedin-img"
 												src={linkedinLogo}
 												alt="linkedin link Indra"
 											/>
-										</a>
+										</Link>
 									</div>
 									<div className="social-details">
 										<h4>Crystine ➡️</h4>
-										<a
-											href="https://www.linkedin.com/in/yin-yee-koh-b1874349/"
+										<Link
+											to="https://www.linkedin.com/in/yin-yee-koh-b1874349/"
 											target="_blank"
+											rel="noopener noreferrer"
 										>
 											<img
 												className="logo linkedin-img"
 												src={linkedinLogo}
 												alt="linkedin link Crystine"
 											/>
-										</a>
+										</Link>
 									</div>
 								</div>
 							</div>
